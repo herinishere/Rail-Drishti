@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: rail-drishti
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: RAILWAYS_DATA_DIR
+        value: /app/data
+      - key: PYTHONPATH
+        value: /app/backend
+    healthCheckPath: /health
